@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+/* ============================
+*  Common
+* ========================== */
+:root {
+  /* テキスト */
+  --bold: 700;
+  --text-primary: #000;
+  --text-secondary: #fff;
+
+  /* 背景色 */
+  --bg-primary: #fff;
+  --bg-drawer-menu: #e3dede;
+  --bg-pink: #e48484;
+
+  /* SP 余白 高さ*/
+  --sp-height-40: clamp(16px, 4.14vh, 40px);
+  --sp-height-80: clamp(32px, 8.28vh, 80px);
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--text-primary);
+}
+
+/* ============================
+*  Header
+* ========================== */
+.l-header {
+  height: 160px;
+  padding: 40px 16px;
+}
+
+.l-header__inner {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+}
+
+.l-header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 160px;
+  padding-inline: 16px;
+  background-color: var(--bg-primary);
+}
+
+/*-------------------------
+  ハンバガーメニューアイコン
+-------------------------*/
+.hamburger-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+
+.hamburger-menu__line,
+.hamburger-menu__line::before,
+.hamburger-menu__line::after {
+  width: 45px;
+  height: 3px;
+  background-color: var(--bg-pink);
+}
+
+.hamburger-menu__line {
+  position: relative;
+}
+
+.hamburger-menu__line::before,
+.hamburger-menu__line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  content: '';
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu__line::before {
+  top: -10px;
+}
+
+.hamburger-menu__line::after {
+  top: 10px;
+}
+
+/* オープン時 */
+.open .hamburger-menu__line {
+  background-color: transparent;
+}
+
+.open .hamburger-menu__line::before,
+.open .hamburger-menu__line::after {
+  top: 0;
+}
+
+.open .hamburger-menu__line::before {
+  transform: rotate(315deg);
+}
+
+.open .hamburger-menu__line::after {
+  transform: rotate(-315deg);
+}
+
+/*-------------------------
+  ドロワーメニュー本体
+-------------------------*/
+.drawer-menu {
+  position: fixed;
+  right: -100%;
+  top: 160px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 160px);
+  background-color: var(--bg-drawer-menu);
+  transition: 0.3s ease;
+}
+.drawer-menu.open {
+  right: 0;
+}
+.drawer-menu__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-height-80);
+}
+
+.g-nav {
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.g-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-height-40);
+}
+
+.g-nav__link {
+  font-size: 1.5rem;
+  font-weight: var(--bold);
+  line-height: 1.5;
+}
+
+/*-------------------------
+  お問い合わせボタン
+-------------------------*/
+.g-cta {
+  display: flex;
+  justify-content: center;
+  width: 190px;
+  padding-block: 16px;
+  background-color: var(--bg-pink);
+}
+
+.g-cta__button {
+  font-size: 1.5rem;
+  font-weight: var(--bold);
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
