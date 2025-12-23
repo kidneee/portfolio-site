@@ -281,6 +281,7 @@ body {
   font-size: 1.5rem;
   font-weight: var(--bold);
   line-height: 1.5;
+  transition: all 0.3s ease;
 }
 @media screen and (min-width: 769px) {
   .g-nav__link {
@@ -288,6 +289,12 @@ body {
     font-weight: var(--regular);
   }
 }
+
+/* ホバー時 */
+.g-nav__link:hover {
+  color: var(--text-required);
+}
+
 /*-------------------------
   お問い合わせボタン
 -------------------------*/
@@ -298,19 +305,29 @@ body {
   width: 190px;
   padding-block: 16px;
   background-color: var(--bg-pink);
+  flex-shrink: 0;
 }
 @media screen and (min-width: 769px) {
   .g-cta {
     width: 120px;
     height: 100%;
+    padding-block: 0;
+    transition: 0.3s ease;
   }
 }
 
 .g-cta__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   font-size: 1.5rem;
   font-weight: var(--bold);
   line-height: 1.5;
   color: var(--text-secondary);
+  flex-shrink: 0;
+  transition: 0.3s ease;
 }
 @media screen and (min-width: 769px) {
   .g-cta__button {
@@ -319,6 +336,14 @@ body {
   }
 }
 
+/* ホバー時 */
+.g-cta:hover {
+  transform: scaleX(1.1);
+}
+.g-cta:hover .g-cta__button {
+  
+  background-color: #ed5d5d;
+}
 /*-------------------------
   FV
 -------------------------*/
