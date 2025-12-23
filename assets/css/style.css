@@ -455,6 +455,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 96px;
+  cursor: pointer;
 }
 
 .c-tabs__item.active {
