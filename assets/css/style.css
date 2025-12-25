@@ -311,6 +311,7 @@ body {
   .g-cta {
     width: 120px;
     height: 100%;
+    margin-left: auto;
     padding-block: 0;
     transition: 0.3s ease;
   }
@@ -338,12 +339,10 @@ body {
 
 /* ホバー時 */
 .g-cta:hover {
-  transform: scaleX(1.1);
-}
-.g-cta:hover .g-cta__button {
   
   background-color: #ed5d5d;
 }
+
 /*-------------------------
   FV
 -------------------------*/
